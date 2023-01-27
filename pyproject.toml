@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "django-drf-async"
+version = "0.1.0"
+description = ""
+authors = ["godd0t <lirrishala@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_drf_async"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.5"
+djangorestframework = "^3.14.0"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "22.12.0"
+isort = "5.11.4"
+ruff = "0.0.236"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+skip = "migrations"
+
+[tool.ruff]
+line-length = 88
