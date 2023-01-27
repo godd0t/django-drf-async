@@ -4,6 +4,9 @@ lint:
 format:
 	bash ./scripts/format.sh
 
+test:
+	bash ./scripts/test.sh
+
 all help:
 	@echo "$$HELP"
 

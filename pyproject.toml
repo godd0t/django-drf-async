@@ -18,7 +18,10 @@ isort = "5.11.4"
 ruff = "0.0.236"
 
 [tool.poetry.group.test.dependencies]
-# to be added
+pytest = "7.2.1"
+pytest-django = "4.5.2"
+pytest-asyncio = "0.20.3"
+pytest-cov= "4.0.0"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs-material = "9.0.6"
@@ -28,6 +31,34 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 
+# TESTING
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --capture=no --log-cli-level=INFO --cov-report=term-missing" # --cov-fail-under=90
+testpaths = [
+    "tests",
+]
+python_files = "tests.py test_*.py *_tests.py"
+filterwarnings = [
+    'ignore::DeprecationWarning:kombu.*:',
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "import*",
+]
+
+
+[tool.coverage.run]
+omit = ["*/migrations/*", "*/tests/*", "*/conf/*", "codebase/manage.py", "*__init__.py"]
+source = ["codebase"]
+
+
+# LINTING
 [tool.black]
 line-length = 88
 target-version = ['py39', 'py310', 'py311']
