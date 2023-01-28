@@ -42,7 +42,7 @@ jobs:
           python-version: 3.11
       - uses: actions/cache@v3
         with:
-          path: ${{ env.pythonLocation }}
-          key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}
+          key: ${{ github.ref }}
+          path: .cache
       - run: pip install mkdocs-material mdx_include mkdocs-markdownextradata-plugin pymdown-extensions
       - run: mkdocs gh-deploy --force
