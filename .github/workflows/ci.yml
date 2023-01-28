@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v4
         id: setup-python
         with:
-          python-version: "3.11"
+          python-version: 3.11
           cache: "pip"
           cache-dependency-path: pyproject.toml
       - uses: actions/cache@v3
@@ -34,7 +34,17 @@ jobs:
         run: make test-cov
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v3
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - uses: actions/cache@v3
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: make deploy-docs
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
