@@ -13,6 +13,9 @@ test-cov:
 run-docs:
 	bash ./scripts/run-docs.sh
 
+deploy-docs:
+	bash ./scripts/build-docs.sh
+
 all help:
 	@echo "$$HELP"
 
