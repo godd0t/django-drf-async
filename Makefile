@@ -7,6 +7,9 @@ format:
 test:
 	bash ./scripts/test.sh
 
+test-cov:
+	bash ./scripts/test-cov.sh
+
 all help:
 	@echo "$$HELP"
 
