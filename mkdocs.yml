@@ -1,3 +1,56 @@
 site_name: Django DRF Async
+site_description: Django DRF Async is a Django app that provides asynchronous views for Django REST Framework.
+repo_name: godd0t/django-drf-async
+repo_url: https://github.com/godd0t/django-drf-async
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+          icon: material/lightbulb-outline
+          name: Switch to light mode
+  features:
+  - navigation.footer
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github-alt
+  language: en
+plugins:
+- search
+
+nav:
+- Django DRF Async: index.md
+#- Getting Started: getting-started.md
+
+markdown_extensions:
+- toc:
+    permalink: true
+- markdown.extensions.codehilite:
+    guess_lang: false
+- mdx_include:
+    base_path: docs
+- admonition
+- codehilite
+- extra
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format ''
+- pymdownx.tabbed:
+    alternate_style: true
+- attr_list
+- md_in_html
+extra_css:
+- https://fastapi.tiangolo.com/css/termynal.css
+- https://fastapi.tiangolo.com/css/custom.css
+extra_javascript:
+- https://fastapi.tiangolo.com/js/termynal.js
+- https://fastapi.tiangolo.com/js/custom.js

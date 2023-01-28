@@ -1,8 +1,26 @@
-# Django DRF async
+# Django DRF Async
 
 [![pypi-version]][pypi]
 [![build-status-image]][build-status]
 [![coverage-status-image]][codecov]
+
+
+---
+
+## Purpose
+
+This package provides a way to implement asynchronous views in Django DRF.
+
+
+## Installation
+
+``` pip install django-drf-async ```
+
+## Architecture
+
+
+## Project layout
+
 
 
 

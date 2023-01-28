@@ -10,6 +10,9 @@ test:
 test-cov:
 	bash ./scripts/test-cov.sh
 
+run-docs:
+	bash ./scripts/run-docs.sh
+
 all help:
 	@echo "$$HELP"
 

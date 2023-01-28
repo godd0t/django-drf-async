@@ -1,17 +1,74 @@
-# Welcome to MkDocs
+# Django DRF Async
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+[![pypi-version]][pypi]
+[![build-status-image]][build-status]
+[![coverage-status-image]][codecov]
+[![package-status]][repo]
 
-## Commands
+---
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Purpose
+
+This package provides a way to implement asynchronous views in Django DRF.
+
+
+## Installation
+
+<div class="termy">
+
+```console
+$ pip install django-drf-async
+
+---> 100%
+```
+
+</div>
+
+
+## Example
+
+### Create it
+
+
+<div class="termy">
+
+```console
+$ django-admin startproject example
+$ cd example
+$ django-admin startapp example
+```
+
+</div>
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```console
+
+├── example
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── example
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── requirements.txt
+```
+
+
+[coverage-status-image]: https://codecov.io/gh/godd0t/django-drf-async/branch/main/graph/badge.svg
+[codecov]: https://codecov.io/gh/godd0t/django-drf-async
+[pypi-version]: https://badge.fury.io/py/django-drf-async.svg
+[pypi]: https://pypi.org/project/djangorestframework/
+[build-status-image]: https://github.com/godd0t/django-drf-async/actions/workflows/ci.yml/badge.svg
+[build-status]: https://github.com/godd0t/django-drf-async/actions/workflows/ci.yml
+[repo]: https://github.com/godd0t/django-drf-async
+[package-status]: https://img.shields.io/badge/work%20in%20progress-yellow

@@ -25,6 +25,9 @@ pytest-cov= "4.0.0"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs-material = "9.0.6"
+mdx_include = "1.4.2"
+mkdocs-markdownextradata-plugin = "0.2.5"
+termynal = "0.2.1"
 
 [build-system]
 requires = ["poetry-core"]
