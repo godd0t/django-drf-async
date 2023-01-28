@@ -21,13 +21,11 @@ jobs:
       - uses: actions/cache@v3
         id: cache
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          path: ${{ env.pythonLocation }}
+          key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: pip install -r requirements.txt
+        run: pip install -e .[dev,docs,test,lint]
       - name: Lint with black and isort
         run: make lint
       - name: Run tests and collect coverage
