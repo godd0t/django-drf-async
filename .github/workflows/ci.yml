@@ -42,7 +42,7 @@ jobs:
           python-version: 3.11
       - uses: actions/cache@v3
         with:
-          key: ${{ github.ref }}
-          path: .cache
+          path: ${{ env.pythonLocation }}
+          key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}
       - run: pip install -e .[docs]
       - run: mkdocs gh-deploy --force
