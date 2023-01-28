@@ -44,5 +44,5 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}
-      - run: pip install mkdocs mdx_include mkdocs-markdownextradata-plugin
+      - run: pip install mkdocs mdx_include mkdocs-markdownextradata-plugin pymdown-extensions
       - run: mkdocs gh-deploy --force
