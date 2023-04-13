@@ -1,6 +1,7 @@
 # Django DRF Async
 
 [![pypi-version]][pypi]
+[![Downloads](https://static.pepy.tech/badge/django-drf-async)](https://pepy.tech/project/django-drf-async)
 [![build-status-image]][build-status]
 [![coverage-status-image]][codecov]
 [![package-status]][repo]
